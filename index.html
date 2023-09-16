@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Temparature converter</title>
+    <style>
+        body {
+            background-color: peachpuff
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="temp">
+            <h6>CELSIUS</h6>
+            <input type="number" id="celsius" />
+        </div>
+        <div class="temp">
+            <h6>FAHRENHEIT</h6>
+            <input type="number" id="fahrenheit" />
+        </div>
+    </div>
+    <script>
+        let celsius = document.getElementById('celsius')
+        let fahrenheit = document.getElementById('fahrenheit')
+
+        celsius.oninput = () => {
+            let output = (parseFloat(celsius.value) * 9) / 5 + 32;
+            fahrenheit.value = parseFloat(output.toFixed(2))
+        };
+
+        fahrenheit.oninput = () => {
+            let output = (parseFloat(fahrenheit.value) - 32) * 5 / 9;
+            celsius.value = parseFloat(output.toFixed(2))
+        };
+    </script>
+
+
+</body>
+
+</html>
